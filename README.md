@@ -1,0 +1,1 @@
+A point of sale system interface which allows one to select and item for purchase, fills a cart with all the selected items, gives a summary and print preview, and prints the receipt. The cart can be edited to create a flexible purchase experience.
