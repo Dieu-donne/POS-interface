@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Persol Point Of Sale System</title>
+    <link rel="icon" type="image" href="Persol-fav.png" sizes="192x192"> 
+    <link rel="stylesheet" href="css/bootstrap-grid.min.css"/>
+	<link rel="stylesheet" href="css/bootstrap-reboot.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+	<link rel="stylesheet" href="POS2 CSS.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body onload="tabfill();">
+    <div>
+        <div class="card text-white jumbo">
+            <div class="card-body back">
+                <i class="material-icons hei">email</i>
+                <span class="hei1">persolpos@persol.net</span>
+                <i class="material-icons hei">call</i>
+                <span class="hei1">0509377177</span>
+                <i class="fa fa-question hei" style="font-size:24px"></i>
+                <a href="#" class="hei1" >Help</a>
+                <a href="https://www.skype.com"><i class="fa fa-skype skype" style="font-size:24px"></i></a>
+                <a href="https://www.twitter.com"><i class="fa fa-twitter twitter" style="font-size:24px"></i></a>
+                <a href="https://www.instagram.com"><i class="fa fa-instagram instagram" style="font-size:24px"></i></a>
+                <a href="https://www.facebook.com/"><i class="fa fa-facebook facebook" style="font-size:24px"></i></a>
+            </div>
+        </div>
+    </div>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-info bodymove"> 
+            <ul class="navbar-nav navl">
+                <li>
+                    <a class="nav-link nav3" href="POS2.html"><img class="image" src="persol-pay.png"></a>
+                </li>
+                <li class="nav-item nav1">
+                    <a class="nav-link colortext" href="#">POS Deals</a>
+                </li>
+                <li class="nav-item nav1">
+                    <a class="nav-link colortext" href="#">Daily Offers</a>
+                </li>
+                <li class="nav-item nav1">
+                    <a class="nav-link colortext1" href="#">Gift Cards</a>
+                </li>
+                <li class="nav-item move2">
+                    <a  class="move0" href="#">Locate Us </a>
+                    <a class="move0" href="#"><i class="material-icons">location_on</i></a>
+                </li>
+            </ul>
+            <form class="form-inline form">
+                <select name="" id="myinputs" class="form-control mr-sm-2 width"></select>
+                <input class="form-control mr-sm-2" type="number" required id="Quantity" placeholder="Quantity..." 
+                title="Number of Items" min="1" max="1000">
+                <input class="btn btn-success" id="hey" type="submit" value="ADD" onclick="fill();">
+            </form>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="card bg-light text-white float">
+            <div class="card-body tablecard">
+                <table class="table table-bordered" id="table">
+                    <thead>
+                      <tr>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Tools</th>
+                      </tr>
+                    </thead>
+                    <tbody id="oldtable">
+                        <tr>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-ledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">PURCHASE SUMMARY</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div id="DivIdToPrint">
+            <div class="container modal-body text-center mod-body">
+                <h3 class="display-6 text-info receipt">PERSOL POS</h3>
+                <h5><small>Receipt of Payment</small></h5>
+                <span id="date"></span><br>
+                <span>You Were Served By Dieudonne!</span><br>
+                <span>Thank You!</span>
+                <hr>
+                <div class="container">
+                    <div class="card bg-light text-white">
+                        <div class="card-body tablecard">
+                            <table class="table table-bordered" id="table2">
+                                <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Price</th>
+                                    <th>Qty</th>
+                                    <th>Total</th>
+                                </tr>
+                                </thead>
+                                <tbody id="oldtable2">
+                                    <tr>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="text-left">
+                    <span>Amount Due:<span id="due"></span></span><br>
+                    <span>Amount Paid: GH₵<span id="paidtome"></span></span><br>
+                    <span>Change: <span id="chng"></span></span><br>
+                </div>
+            </div>
+            </div>
+            <div class="modal-footer">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label class="label">Received:</label>
+                        <input class="form-control mr-sm-2" type="number" min="1.00" placeholder="GH₵" id="change" onkeyup="changedue();">
+                    </div>
+                </form>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" onclick="printit();">Print Receipt</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <div>
+        <nav class="navbar navbar-expand-lg bg-info bodymove2"> 
+            <div class="btns">
+                <button type="submit" class="btn btn-secondary" onclick="clears();">Clear Cart</button>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="date(); add();">Proceed</button>
+            </div>
+    </nav>
+    </div>
+
+    <script src="jQuery.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script src="js/popper.js/dist/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+ 	<script src="js/bootstrap.bundle.min.js"></script>
+    <script src="POS2 JS.js"></script>
+</body>
+
+</html>

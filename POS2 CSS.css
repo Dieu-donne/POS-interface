@@ -1,0 +1,160 @@
+body{
+    background-color: #dee
+}
+
+#table, .tablecard{
+    background-color: #dee2e6;
+}
+
+.bodymove{
+    padding-left: 21.8% !important;
+}
+
+.bodymove2{
+    position: fixed;
+    top: 89%;
+    width: 100%;
+}
+
+.hei{
+   float: left;
+}
+
+.hei1{
+    float: left;
+    margin-right: 3%;
+    margin-left: 0.5%;
+    color: rgb(13, 15, 17);
+ }
+
+ .hei2{
+     color: white;
+     float: left;
+     float: right;
+ }
+
+.facebook:hover{
+    background-color:rgb(59,89,152);
+    color: aliceblue;
+}
+
+.facebook{
+    width: 1.8%;
+    padding-left: 0.3%;
+    color: #dee2e6;
+    background-color: aliceblue;
+    border-radius: 15%;
+    float: right;
+    margin: 0% 0.5%;
+}
+
+.twitter{
+    width: 1.8%;
+    color: #dee2e6;
+    background-color: aliceblue;
+    border-radius: 15%;
+    float: right;
+    margin: 0% 0.5%;
+}
+
+.twitter:hover{
+    background-color: #1dcaff;
+    color: aliceblue;
+}
+
+.instagram, .skype{
+    float: right;
+    margin: 0% 0.5%;
+    color: aliceblue;
+}
+
+.jumbo{
+    margin-top: 0%;
+    background-color: #dee2e6;
+}
+
+.image{
+    width: 150px;
+    height: 80px;
+}
+
+.colortext{
+    color: white;
+    padding: 0%;
+}
+
+.colortext:after{
+    content:'|';
+    padding-left: 15px;
+}
+
+.colortext1{
+    color: white;
+    padding: 0%;
+}
+
+.move2{
+    color: white;
+    margin-left: 265px;
+    position: relative;
+    bottom: 5px;
+}
+
+.move0{
+    color: white;
+}
+
+.form{
+    position: absolute;
+    top: 40%;
+    left: 32.5%;
+}
+
+.nav3{
+    padding-top: 0% !important;
+    padding-bottom: 0% !important; 
+}
+
+.width{
+    width: 435px !important;
+}
+
+.float{
+    width: 78%;
+    margin: auto;
+}
+
+#Quantity{
+    height: 100%;
+    border-radius: 5px;
+    width: 150px !important;
+    margin-left: 10px;
+}
+
+th, td{
+    color: black;
+}
+
+.btns{
+    margin: auto;
+    width: 20%;
+}
+
+.btns button{
+    margin: 3.6%;
+    width: 40%;
+}
+
+.receipt{
+    width: 40%;
+    margin: auto;
+}
+
+.mod-body{
+    line-height: 130%;
+}
+
+.label{
+    color: black;
+    margin-left: 0%;
+}
